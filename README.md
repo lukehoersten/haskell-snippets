@@ -33,6 +33,17 @@ is already in use:
 The Haskell snippts should now be available to use! Try typing
 `fn<TAB>` in an Emacs Haskell buffer to test.
 
+## Notes
+
+I **highly** recommend using YASnippet with
+[ido-mode](http://www.emacswiki.org/emacs/InteractivelyDoThings). Configure
+Emacs:
+
+    (setq-default yas-prompt-functions '(yas-ido-prompt yas-dropdown-prompt))
+
+This is important so that alternatives (like `import` vs. `import
+qualified`) can quickly be selected with a single key stroke.
+
 ## Authors
 
 This code is written and maintained by Luke Hoersten,
