@@ -11,7 +11,10 @@
 Clone repository:
 
     $ cd ~/.emacs.d/snippets
+
     $ git clone https://github.com/LukeHoersten/shnippet
+    OR
+    $ hg clone https://bitbucket.org/LukeHoersten/shnippet
 
 Add the cloned repository to YASnippet's `yas-snippet-dirs`:
 
