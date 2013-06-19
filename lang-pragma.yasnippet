@@ -3,4 +3,4 @@
 # name: language pragma
 # contributor: Luke Hoersten <luke@hoersten.org>
 # --
-{-# LANGUAGE ${1:OverloadedStrings} #-}
+{-# LANGUAGE `(progn (require 'haskell-yas) (haskell-yas-complete "Extension: " haskell-yas-ghc-language-pragmas))` #-}
