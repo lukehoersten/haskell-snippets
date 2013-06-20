@@ -1,7 +1,9 @@
 # -*- mode: snippet -*-
 # key: fn
 # name: top level function
+# condition: (= (length "fn") (current-column))
+# expand-env: ((yas-indent-line 'fixed))
 # contributor: Luke Hoersten <luke@hoersten.org>
 # --
-${1:${2:f} :: ${3:a} ${4:-> ${5:b}}}
-$2 ${6:x} = $0
+${1:f} :: ${2:a} ${3:-> ${4:b}}
+$1 ${5:x} = ${6:expression}$0

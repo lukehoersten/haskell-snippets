@@ -1,10 +1,16 @@
 # -*- mode: snippet -*-
 # key: mod
 # name: module
-# contributor: Luke Hoersten
+# condition: (= (length "mod") (current-column))
+# expand-env: ((yas-indent-line 'fixed))
+# contributor: Luke Hoersten <luke@hoersten.org>
 # --
-module ${1:`(file-name-nondirectory (file-name-sans-extension (buffer-file-name)))`} where
+module ${1:`(if (not buffer-file-name) "Module"
+                (let ((name (file-name-sans-extension (buffer-file-name))))
+                     (if (search "src/" name)
+                         (replace-regexp-in-string "/" "." (car (last (split-string name "src/"))))
+                         (file-name-nondirectory name))))`} where
 
-${2:import           $3 ${4:($5)}}
+${2:import           ${3:Module} ${4:(${5:f})}}
 
 $0

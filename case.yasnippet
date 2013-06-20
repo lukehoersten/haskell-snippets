@@ -3,6 +3,6 @@
 # name: case
 # contributor: Luke Hoersten <luke@hoersten.org>
 # --
-case $1 of
-	$2 -> $4
-	$3 -> $5$0
+case ${1:x} of
+    ${2:Data} -> ${4:expression}
+    ${3:Data} -> ${5:expression}$0

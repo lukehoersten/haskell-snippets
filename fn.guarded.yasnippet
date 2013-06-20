@@ -1,9 +1,11 @@
 # -*- mode: snippet -*-
 # key: fn
 # name: top level guarded function
+# condition: (= (length "fn") (current-column))
+# expand-env: ((yas-indent-line 'fixed))
 # contributor: Luke Hoersten <luke@hoersten.org>
 # --
-${1:${2:f} :: ${3:a} ${4:-> ${5:b}}}
-$2 ${6:x}
-	| $7 = $8
-        | $9 = $10
+${1:f} :: ${2:a} ${3:-> ${4:b}}
+$1 ${5:x}
+    | ${6:conditional} = ${8:expression}
+    | ${7:conditional} = ${9:expression}$0
