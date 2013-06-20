@@ -2,5 +2,6 @@ syntax: regexp
 ~$
 \#.*$
 \.DS_Store
+\.yas-compiled-snippets\.el$
 
 
