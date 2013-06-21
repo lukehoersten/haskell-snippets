@@ -1,13 +1,12 @@
 # Shnippet
 
-## About
 
 **Shnippet** is a collection of
 [YASnippet][yas]
 [Haskell][haskell] snippets for Emacs.
 
 
-## Usage
+## Installation
 
 Clone repository:
 
@@ -34,14 +33,32 @@ Haskell snippts should now be available to use! In a `haskell-mode`
 buffer, type `fn<TAB>`. A prompt should appear asking which `fn`
 snippet to expand.
 
-I **highly** recommend using YASnippet with
-[ido-mode](http://www.emacswiki.org/emacs/InteractivelyDoThings). Configure
+I **highly** recommend using YASnippet with [ido-mode]. Configure
 Emacs:
 
     (setq-default yas-prompt-functions '(yas-ido-prompt yas-dropdown-prompt))
 
 This is important so that alternatives (like `import` vs. `import
 qualified`) can quickly be selected with a single key stroke.
+
+
+## Available Expansion Keys
+
+* `new` - newtype
+* `mod` - module [simple, exports]
+* `main ` - main module and funtion
+* `let` - let bindings
+* `lang` - language extension pragmas
+* `\` - lambda function
+* `inst` - instance declairation
+* `imp` - import modules [simple, qualified]
+* `if` - if conditional [inline, block]
+* `<-` - monadic get
+* `fn` - top level function [simple, guarded, clauses]
+* `data` - data type definition [inline, record]
+* `=>` - type constraint
+* `{-` - block comment
+* `case` - case statement
 
 
 ## Design Ideals
@@ -58,25 +75,6 @@ qualified`) can quickly be selected with a single key stroke.
   multiple snippets share a key (ex: `fn`), the `ido-mode` prompts are
   unique to one character (ex: `guarded function` and `simple
   function` are `g` and `s` respectively).
-
-
-## Available Expansion Keys
-
-* `new` - newtype
-* `mod` - module
-* `main ` - main module and funtion
-* `let` - let bindings
-* `lang` - language extension pragmas
-* `\` - lambda function
-* `inst` - instance declairation
-* `imp` - import modules
-* `if` - if conditional
-* `<-` - monadic get
-* `fn` - top level function
-* `data` - data type definition
-* `=>` - type constraint
-* `{-` - block comment
-* `case` - case statement
 
 
 ## Authors

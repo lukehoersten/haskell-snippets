@@ -1,6 +1,7 @@
 # -*- mode: snippet -*-
 # key: case
 # name: case
+# expand-env: ((yas-indent-line 'fixed))
 # contributor: Luke Hoersten <luke@hoersten.org>
 # --
 case ${1:x} of
