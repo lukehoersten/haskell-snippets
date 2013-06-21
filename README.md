@@ -3,15 +3,15 @@
 ## About
 
 **Shnippet** is a collection of
-[YASnippet](https://github.com/capitaomorte/yasnippet)
-[Haskell](http://haskell.org/) snippets for Emacs.
+[YASnippet][yas]
+[Haskell][haskell] snippets for Emacs.
+
 
 ## Usage
 
 Clone repository:
 
     $ cd ~/.emacs.d/snippets
-
     $ git clone https://github.com/LukeHoersten/shnippet
     OR
     $ hg clone https://bitbucket.org/LukeHoersten/shnippet
@@ -30,10 +30,9 @@ is already in use:
     M-x yas-reload-all
 
 
-The Haskell snippts should now be available to use! Try typing
-`fn<TAB>` in an Emacs Haskell buffer to test.
-
-## Notes
+Haskell snippts should now be available to use! In a `haskell-mode`
+buffer, type `fn<TAB>`. A prompt should appear asking which `fn`
+snippet to expand.
 
 I **highly** recommend using YASnippet with
 [ido-mode](http://www.emacswiki.org/emacs/InteractivelyDoThings). Configure
@@ -44,7 +43,49 @@ Emacs:
 This is important so that alternatives (like `import` vs. `import
 qualified`) can quickly be selected with a single key stroke.
 
+
+## Design Ideals
+
+* Keep snippet keys (the prefix used to auto-complete) to four
+  characters or less while still being as easy to guess as possible.
+
+* Have as few keys as possible. The more keys there are to remember,
+  the harder snippets are to use and learn.
+
+* Leverage [ido-mode][] when reasonable. For instance, to keep the
+  number of snippet keys to a minimum as well as auto complete things
+  like [Haskell Langauge Extension Pragmas][lang-pragma]. When
+  multiple snippets share a key (ex: `fn`), the `ido-mode` prompts are
+  unique to one character (ex: `guarded function` and `simple
+  function` are `g` and `s` respectively).
+
+
+## Available Expansion Keys
+
+* `new` - newtype
+* `mod` - module
+* `main ` - main module and funtion
+* `let` - let bindings
+* `lang` - language extension pragmas
+* `\` - lambda function
+* `inst` - instance declairation
+* `imp` - import modules
+* `if` - if conditional
+* `<-` - monadic get
+* `fn` - top level function
+* `data` - data type definition
+* `=>` - type constraint
+* `{-` - block comment
+* `case` - case statement
+
+
 ## Authors
 
 This code is written and maintained by Luke Hoersten,
 <luke@hoersten.org>.
+
+
+[yas]: https://github.com/capitaomorte/yasnippet
+[ido-mode]: http://www.emacswiki.org/emacs/InteractivelyDoThings
+[lang-pragma]: http://hackage.haskell.org/packages/archive/Cabal/1.16.0.3/doc/html/Language-Haskell-Extension.html#t:KnownExtension
+[haskell]: http://haskell.org/
