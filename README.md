@@ -46,7 +46,7 @@ qualified`) can quickly be selected with a single key stroke.
 
 * `new` - newtype
 * `mod` - module [simple, exports]
-* `main ` - main module and funtion
+* `main ` - main module and function
 * `let` - let bindings
 * `lang` - language extension pragmas
 * `\` - lambda function
