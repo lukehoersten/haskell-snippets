@@ -1,33 +1,36 @@
-# Shnippet
+# Haskell-Snippets
 
 
-**Shnippet** is a collection of
+**Haskell-Snippets** is a collection of
 [YASnippet][yas]
 [Haskell][haskell] snippets for Emacs.
 
 
 ## Installation
 
-Clone repository:
+Enable the Emacs package manager and make sure the melpa package
+repository is set up.
 
-    $ cd ~/.emacs.d/snippets
-    $ git clone https://github.com/LukeHoersten/shnippet
-    OR
-    $ hg clone https://bitbucket.org/LukeHoersten/shnippet
+```lisp
+(require 'package)
+(add-to-list 'package-archives
+             '("melpa" . "http://melpa.milkbox.net/packages/") t)
+(package-initialize)
+```
 
-Add the cloned repository to YASnippet's `yas-snippet-dirs`:
+<kbd>M-x package-install haskell-snippets</kbd>
 
-    (setq yas-snippet-dirs
-          '("~/.emacs.d/snippets/shnippet"
-            "/other/paths/"
-            ))
+Add the following to your Emacs config:
+
+```lisp
+(require 'haskell-snippets)
+```
 
 Snippets may have to be recompiled and reloaded in Emacs if YASnippet
 is already in use:
 
-    M-x yas-recompile-all
-    M-x yas-reload-all
-
+<kbd>M-x yas-recompile-all</kbd>
+<kbd>M-x yas-reload-all</kbd>
 
 Haskell snippts should now be available to use! In a `haskell-mode`
 buffer, type `fn<TAB>`. A prompt should appear asking which `fn`
@@ -36,7 +39,9 @@ snippet to expand.
 I **highly** recommend using YASnippet with [ido-mode]. Configure
 Emacs:
 
-    (setq-default yas-prompt-functions '(yas-ido-prompt yas-dropdown-prompt))
+```lisp
+(setq-default yas-prompt-functions '(yas-ido-prompt yas-dropdown-prompt))
+```
 
 This is important so that alternatives (like `import` vs. `import
 qualified`) can quickly be selected with a single key stroke.
