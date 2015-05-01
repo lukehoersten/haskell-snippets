@@ -42,3 +42,5 @@
 
 (require 'yasnippet)
 (provide 'haskell-snippets)
+
+;;; haskell-snippets.el ends here
