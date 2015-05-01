@@ -6,4 +6,4 @@
 # contributor: Luke Hoersten <luke@hoersten.org>
 # --
 ${1:f} :: ${2:a} ${3:-> ${4:b}}
-$1 ${5:x} = ${6:expression}$0
+$1 ${5:x} = ${6:undefined}$0
