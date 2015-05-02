@@ -54,6 +54,7 @@ qualified`) can quickly be selected with a single key stroke.
 * `main ` - main module and function
 * `let` - let bindings
 * `lang` - language extension pragmas
+* `opt` - GHC options pragmas
 * `\` - lambda function
 * `inst` - instance declairation
 * `imp` - import modules [simple, qualified]
