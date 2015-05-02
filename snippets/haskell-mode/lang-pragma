@@ -1,7 +1,9 @@
 # -*- mode: snippet -*-
 # key: lang
-# name: language pragma
+# name: language extension pragma
 # condition: (= (length "lang") (current-column))
-# contributor: Luke Hoersten <luke@hoersten.org>, John Wiegley
+# contributor: Luke Hoersten <luke@hoersten.org>
 # --
-{-# LANGUAGE `(progn (require 'haskell-yas) (haskell-yas-complete "Extension: " haskell-ghc-supported-languages))` #-}
+{-# LANGUAGE `(some #'(lambda (fn)
+                        (funcall fn "Extension: " haskell-ghc-supported-languages))
+                    yas-prompt-functions)` #-}
