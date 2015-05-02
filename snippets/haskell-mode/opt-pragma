@@ -4,6 +4,6 @@
 # condition: (= (length "opt") (current-column))
 # contributor: Luke Hoersten <luke@hoersten.org>
 # --
-{-# LANGUAGE `(some #'(lambda (fn)
+{-# OPTIONS_GHC `(some #'(lambda (fn)
                         (funcall fn "GHC Option: " haskell-ghc-supported-options))
                     yas-prompt-functions)` #-}
