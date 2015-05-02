@@ -4,6 +4,6 @@
 # condition: (= (length "lang") (current-column))
 # contributor: Luke Hoersten <luke@hoersten.org>
 # --
-{-# LANGUAGE `(some #'(lambda (fn)
-                        (funcall fn "Extension: " haskell-ghc-supported-extensions))
-                    yas-prompt-functions)` #-}
+{-# LANGUAGE `(when (boundp 'haskell-ghc-supported-extensions)
+                (some #'(lambda (fn) (funcall fn "Extension: " haskell-ghc-supported-extensions))
+                      yas-prompt-functions))` #-}
