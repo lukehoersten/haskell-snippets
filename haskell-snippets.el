@@ -69,8 +69,7 @@
 ;;; Code:
 
 (setq haskell-snippets-dir
-      (file-name-directory (or (buffer-file-name)
-                               load-file-name)))
+      (file-name-directory load-file-name))
 
 ;;;###autoload
 (defun haskell-snippets-initialize ()
